@@ -34,13 +34,14 @@ jobs:
           context: ./compose
           push: true
           tags: dokwerker777/keycloak_cyber:dockercompose
+          dockerfile: ./docker-compose.yaml
       
       - name: Scan for vulnerabilities
         uses: crazy-max/ghaction-container-scan@v2
         with:
           severity_threshold: HIGH
           image: dokwerker777/keycloak_cyber:dockercompose
-          dockerfile: ./Dockerfile
+          dockerfile: ./docker-compose.yaml
           
         
           
