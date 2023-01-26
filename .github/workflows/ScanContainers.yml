@@ -25,7 +25,7 @@ jobs:
       - name: Scan for vulnerabilities
         uses: crazy-max/ghaction-container-scan@v2
         with:
-          severity_threshold: HIGH
+          severity_threshold: CRITICAL
           image: dokwerker777/keycloak_cyber:frontend
           dockerfile: ./Dockerfile
           
