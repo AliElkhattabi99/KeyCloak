@@ -25,23 +25,10 @@ jobs:
       - name: Scan for vulnerabilities
         uses: crazy-max/ghaction-container-scan@v2
         with:
+          severity_threshold: HIGH
           image: dokwerker777/keycloak_cyber:frontend
           dockerfile: ./Dockerfile
           
-      - name: Build and push dockercompose
-        uses: docker/build-push-action@v2
-        with:
-          context: ./compose
-          push: true
-          tags: dokwerker777/keycloak_cyber:dockercompose
-          dockerfile: ./docker-compose.yaml
-      
-      - name: Scan for vulnerabilities
-        uses: crazy-max/ghaction-container-scan@v2
-        with:
-          severity_threshold: HIGH
-          image: dokwerker777/keycloak_cyber:dockercompose
-          dockerfile: ./docker-compose.yaml
           
         
           
